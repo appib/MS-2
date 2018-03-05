@@ -2,4 +2,4 @@
 echo "********************************************************"
 echo "Starting Licensing Service"
 echo "********************************************************"
-java -jar /usr/local/licensingservice/@project.build.finalName@.jar
+java -jar /usr/local/licensingservice/licensingservice.jar

@@ -2,4 +2,4 @@
 echo "********************************************************"
 echo "Starting Organization Service"
 echo "********************************************************"
-java -jar /usr/local/organizationservice/@project.build.finalName@.jar
+java -jar /usr/local/organizationservice/organizationservice.jar
