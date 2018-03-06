@@ -52,38 +52,20 @@
 		<finalName>organizationservice</finalName>
 		<plugins>
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-dependency-plugin</artifactId>
-			    <executions>
-			        <execution>
-			            <id>copy-dependencies</id>
-			            <phase>prepare-package</phase>
-			            <goals>
-			                <goal>copy-dependencies</goal>
-			            </goals>
-			            <configuration>
-			                <outputDirectory>${project.build.directory}/lib</outputDirectory>
-			                <overWriteReleases>false</overWriteReleases>
-			                <overWriteSnapshots>false</overWriteSnapshots>
-			                <overWriteIfNewer>true</overWriteIfNewer>
-			            </configuration>
-			        </execution>
-			    </executions>
-			</plugin>
-			<plugin>
-				<!-- Build an executable JAR -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-                			<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.app.organizationService.OrganizationServiceApplication</mainClass>
-						</manifest>
-					</archive>
+					<fork>true</fork>
+					<mainClass>com.app.organizationService.OrganizationServiceApplication</mainClass>
 				</configuration>
-		   </plugin>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -107,10 +89,6 @@
 						</resource>
 					</resources>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
