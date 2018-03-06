@@ -1,0 +1,17 @@
+version: '2'
+services:
+  database:
+      image: mysql:latest
+      ports:
+      - "3306:3306"
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=licensesdb
+  licensingservice:
+      image: appibh/licensing-service:v1
+      ports:
+        - "18081:18081"
+  organizationservice:
+      image: appibh/organization-service:v1
+      ports:
+        - "18082:18082"
