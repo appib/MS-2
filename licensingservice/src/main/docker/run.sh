@@ -2,4 +2,4 @@
 echo "********************************************************"
 echo "Starting Licensing Service"
 echo "********************************************************"
-java -jar /usr/local/licensingservice/licensingservice.jar
+java -jar -Dspring.profiles.active=docker /usr/local/licensingservice/licensingservice.jar
