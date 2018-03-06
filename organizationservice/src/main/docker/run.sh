@@ -2,4 +2,4 @@
 echo "********************************************************"
 echo "Starting Organization Service"
 echo "********************************************************"
-java -jar /usr/local/organizationservice/organizationservice.jar
+java -jar -Dspring.profiles.active=docker /usr/local/organizationservice/organizationservice.jar
